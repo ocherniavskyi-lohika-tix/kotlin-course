@@ -21,6 +21,7 @@ dependencies {
     testImplementation("org.testng:testng:7.4.0")
     testImplementation("io.rest-assured:rest-assured:4.4.0")
     testImplementation("io.kotest:kotest-runner-junit5:5.0.0.M2")
+    testImplementation("io.kotest:kotest-framework-datatest:5.0.0.M2")
     testImplementation("com.fasterxml.jackson.core:jackson-databind:2.13.0")
 
 }
