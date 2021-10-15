@@ -20,7 +20,7 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.1")
     testImplementation("org.testng:testng:7.4.0")
     testImplementation("io.rest-assured:rest-assured:4.4.0")
-//    testImplementation("com.fasterxml.jackson.core:jackson-core:2.13.0")
+    testImplementation("io.kotest:kotest-runner-junit5:5.0.0.M2")
     testImplementation("com.fasterxml.jackson.core:jackson-databind:2.13.0")
 
 }
@@ -48,6 +48,14 @@ tasks.register<Test>("cucumber") {
 }
 
 tasks.register<Test>("junit") {
+    useJUnitPlatform {
+        System.getProperty("includeTags")?.let {
+            includeTags(it)
+        }
+    }
+}
+
+tasks.register<Test>("kotest") {
     useJUnitPlatform {
         System.getProperty("includeTags")?.let {
             includeTags(it)
